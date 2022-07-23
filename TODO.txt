@@ -1,1 +1,3 @@
 Việc cần làm 
+24/7 đã tổ chức template cơ bản
+Cần tiếp tục convert file main.html xóa toàn bộ nội dung body để cho các file thực tế kế thừa
