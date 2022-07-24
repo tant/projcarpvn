@@ -1,3 +1,8 @@
 Việc cần làm 
+
+https://portotheme.com/html/porto/8.1.0/demo-architecture-interior.html
+
 24/7 đã tổ chức template cơ bản
 Cần tiếp tục convert file main.html xóa toàn bộ nội dung body để cho các file thực tế kế thừa
+
+Coi lại cách cấu hình cái slider, so sánh với bản demo

@@ -56,7 +56,7 @@ Theme Version:	9.7.0
 		loadMore: function() {
 
 			var self = this,
-				ajax_url = ( self.$wrapper.data('ajax-url') ) ? self.$wrapper.data('ajax-url') : 'ajax/portfolio-ajax-load-more-';
+				ajax_url = ( self.$wrapper.data('ajax-url') ) ? self.$wrapper.data('ajax-url') : 'ajax/ajax-load-more-';
 
 			self.$btn.parent().find('.btn').hide();
 			self.$loader.addClass('portfolio-load-more-loader-showing').show();
@@ -149,7 +149,7 @@ Theme Version:	9.7.0
 		loadMore: function() {
 
 			var self = this,
-				ajax_url = ( self.$wrapper.data('ajax-url') ) ? self.$wrapper.data('ajax-url') : 'ajax/portfolio-ajax-load-more-';
+				ajax_url = ( self.$wrapper.data('ajax-url') ) ? self.$wrapper.data('ajax-url') : 'ajax/ajax-load-more-';
 
 			self.$btn.parent().find('.btn').hide();
 			self.$loader.addClass('portfolio-load-more-loader-showing').show();

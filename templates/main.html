@@ -64,8 +64,9 @@
     <div class="body">
         
         {% include '_header.html' %}
-        
+
         <div role="main" class="main">
+            {% block jumbotron %}
             <div class="slider-container rev_slider_wrapper" style="height: 100vh" id="home">
                 <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider
                     data-plugin-options="{'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': 1630, 'gridheight': 800, 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'mouse', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }}">
@@ -138,7 +139,9 @@
                     </ul>
                 </div>
             </div>
+            {% endblock %}
 
+            {% block whoweare %}
             <section class="section section-height-5 bg-light border-0 m-0" id="whoweare">
                 <div class="container container-xl-custom">
                     <div class="row align-items-center">
@@ -206,7 +209,9 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block whatwedo %}
             <section class="section section-height-4 bg-quaternary border-0 m-0 appear-animation"
                 data-appear-animation="fadeIn" id="ourservices">
                 <div class="container container-xl-custom">
@@ -228,7 +233,7 @@
                     <div class="featured-boxes featured-boxes-style-4 custom-featured-boxes-style-1">
                         <div class="row mb-2">
                             <div class="col-md-6 col-xl-3">
-                                <a href="ajax/demo-architecture-interior-ajax-services-detail.html"
+                                <a href="ajax/ajax-services-detail.html"
                                     class="text-decoration-none simple-ajax-popup">
                                     <div class="featured-box featured-box-primary featured-box-effect-5 appear-animation"
                                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300">
@@ -256,7 +261,7 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <a href="ajax/demo-architecture-interior-ajax-services-detail.html"
+                                <a href="ajax/ajax-services-detail.html"
                                     class="text-decoration-none simple-ajax-popup">
                                     <div class="featured-box featured-box-primary featured-box-effect-5 appear-animation"
                                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">
@@ -297,7 +302,7 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <a href="ajax/demo-architecture-interior-ajax-services-detail.html"
+                                <a href="ajax/ajax-services-detail.html"
                                     class="text-decoration-none simple-ajax-popup">
                                     <div class="featured-box featured-box-primary featured-box-effect-5 appear-animation"
                                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="700">
@@ -324,7 +329,7 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <a href="ajax/demo-architecture-interior-ajax-services-detail.html"
+                                <a href="ajax/ajax-services-detail.html"
                                     class="text-decoration-none simple-ajax-popup">
                                     <div class="featured-box featured-box-primary featured-box-effect-5 appear-animation"
                                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="900">
@@ -359,7 +364,9 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block portfolio %}
             <section class="section section-height-4 bg-light border-0 m-0" id="ourprojects">
                 <div class="container container-xl-custom">
                     <div class="row justify-content-center">
@@ -387,10 +394,11 @@
                     <div id="portfolioLoadMoreWrapper" class="row portfolio-list sort-destination mb-3 appear-animation"
                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300"
                         data-sort-id="portfolio" data-total-pages="3"
-                        data-ajax-url="ajax/demo-architecture-interior-ajax-load-more-">
+                        data-ajax-url="ajax/ajax-load-more-">
                         <div class="col-lg-4 isotope-item">
                             <div class="portfolio-item">
-                                <a href="demo-architecture-interior-projects-detail.html" class="text-decoration-none">
+                                <!-- TODO: chuyển trang này về template để lấy thiết kế-->
+                                <a href="{% static 'pages/projects-detail.html' %}" class="text-decoration-none">
                                     <span
                                         class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear custom-thumb-info-style-1">
                                         <span class="thumb-info-wrapper">
@@ -413,7 +421,8 @@
                         </div>
                         <div class="col-lg-4 isotope-item">
                             <div class="portfolio-item">
-                                <a href="demo-architecture-interior-projects-detail.html" class="text-decoration-none">
+                                <!-- TODO: chuyển trang này về template để lấy thiết kế-->
+                                <a href="{% static 'pages/projects-detail.html' %}" class="text-decoration-none">
                                     <span
                                         class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear custom-thumb-info-style-1">
                                         <span class="thumb-info-wrapper">
@@ -436,7 +445,8 @@
                         </div>
                         <div class="col-lg-4 isotope-item">
                             <div class="portfolio-item">
-                                <a href="demo-architecture-interior-projects-detail.html" class="text-decoration-none">
+                                <!-- TODO: chuyển trang này về template để lấy thiết kế-->
+                                <a href="{% static 'pages/projects-detail.html' %}" class="text-decoration-none">
                                     <span
                                         class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-dark-linear custom-thumb-info-style-1">
                                         <span class="thumb-info-wrapper">
@@ -473,14 +483,16 @@
                             <button id="portfolioLoadMore"
                                 class="btn btn-dark btn-outline font-weight-extra-bold text-3 px-5 py-3 border-width-4 appear-animation"
                                 data-appear-animation="fadeInUpShorter">
-                                LOAD MORE</button><a href="demo-architecture-interior-projects.html"
+                                LOAD MORE</button><a href="{% static 'pages/projects.html' %}"
                                 class="btn btn-primary btn-outline ms-2 font-weight-extra-bold text-3 px-5 py-3 border-width-4 appear-animation"
                                 data-appear-animation="fadeInUpShorter">VIEW ALL</a>
                         </div>
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block whyus %}
             <section class="section section-parallax section-height-4 overlay overlay-show border-0 m-0"
                 data-plugin-parallax data-plugin-options="{'speed': 1.5}"
                 data-image-src="{% static 'img/background-1.jpg' %}" id="whyhireus">
@@ -501,7 +513,7 @@
                     </div>
                 </div>
             </section>
-
+            
             <div class="container container-xl-custom custom-negative-margin-top z-index-2 position-relative">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-sm-6 col-lg-3 col-xl-2 order-2 order-xl-1 mb-4 mb-lg-0">
@@ -595,7 +607,9 @@
                     </div>
                 </div>
             </div>
+            {% endblock %}
 
+            {% block testimonial %}
             <section class="section section-height-4 bg-light border-0 mt-4 mb-0">
                 <div class="container container-xl-custom">
                     <div class="row">
@@ -679,7 +693,9 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block blog %}
             <section class="section section-height-4 bg-color-grey-scale-1 border-0 m-0" id="ourblog">
                 <div class="container container-xl-custom">
                     <div class="row justify-content-center">
@@ -704,7 +720,7 @@
                     </div>
                     <div id="portfolioLoadMoreWrapperBlog" class="row portfolio-list sort-destination pb-2"
                         data-sort-id="portfolio" data-total-pages="3"
-                        data-ajax-url="ajax/demo-architecture-interior-blog-ajax-load-more-">
+                        data-ajax-url="ajax/blog-ajax-load-more-">
                         <div class="col-lg-4 isotope-item text-start">
                             <div class="portfolio-item appear-animation" data-appear-animation="expandIn"
                                 data-appear-animation-delay="450">
@@ -802,7 +818,9 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block ourteam %}
             <section class="section section-height-4 border-0 m-0" id="ourteam">
                 <div class="container container-xl-custom">
                     <div class="row justify-content-center">
@@ -829,7 +847,7 @@
                     <div class="row appear-animation" data-appear-animation="fadeInUpShorter"
                         data-appear-animation-delay="300">
                         <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                            <a href="ajax/demo-architecture-interior-ajax-team-detail.html"
+                            <a href="ajax/ajax-team-detail.html"
                                 class="text-decoration-none simple-ajax-popup">
                                 <div class="card border-0 custom-box-shadow-1">
                                     <svg class="custom-square-1 z-index-0" width="80" height="80">
@@ -846,7 +864,7 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                            <a href="ajax/demo-architecture-interior-ajax-team-detail.html"
+                            <a href="ajax/ajax-team-detail.html"
                                 class="text-decoration-none simple-ajax-popup">
                                 <div class="card border-0 custom-box-shadow-1">
                                     <svg class="custom-square-1 z-index-0" width="80" height="80">
@@ -863,7 +881,7 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                            <a href="ajax/demo-architecture-interior-ajax-team-detail.html"
+                            <a href="ajax/ajax-team-detail.html"
                                 class="text-decoration-none simple-ajax-popup">
                                 <div class="card border-0 custom-box-shadow-1">
                                     <svg class="custom-square-1 z-index-0" width="80" height="80">
@@ -880,7 +898,7 @@
                             </a>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                            <a href="ajax/demo-architecture-interior-ajax-team-detail.html"
+                            <a href="ajax/ajax-team-detail.html"
                                 class="text-decoration-none simple-ajax-popup">
                                 <div class="card border-0 custom-box-shadow-1">
                                     <svg class="custom-square-1 z-index-0" width="80" height="80">
@@ -899,7 +917,9 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
 
+            {% block contactus %}
             <section class="section section-height-4 bg-quaternary border-0 m-0" id="contactus">
                 <div class="container container-xl-custom">
                     <div class="row mb-5">
@@ -1003,6 +1023,7 @@
                     </div>
                 </div>
             </section>
+            {% endblock %}
         </div>
 
         {% include '_footer.html' %}
