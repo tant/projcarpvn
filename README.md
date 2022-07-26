@@ -5,12 +5,8 @@
 ### Cài đặt các công cụ cần thiết
 ```
 git
-
-
 python
-
 django 
-
 vs code + và extension cho python
 ```
 
