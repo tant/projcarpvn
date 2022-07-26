@@ -4,9 +4,13 @@
 
 ###Cài đặt các công cụ cần thiết
 git
+
 python
+
 django 
+
 vs code + và extension cho python
+
 
 ###Clone repo và chạy lại virtual environment
 Tạo thư mục của project
