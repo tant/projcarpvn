@@ -2,8 +2,4 @@ Việc cần làm
 
 https://portotheme.com/html/porto/8.1.0/demo-architecture-interior.html
 
-24/7 đã tổ chức template cơ bản
-30/7 convert file main xong, đang làm tiếp menu
-
-
 * Coi lại cách cấu hình cái slider, so sánh với bản demo
