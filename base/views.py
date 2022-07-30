@@ -5,11 +5,11 @@ from django.http import HttpResponse
 
 # xem trang home
 def home(request):
-    return render(request,'main.html')
+    return render(request,'home.html')
 
 # xem trang home mới
-def newhome(request):
-    return render(request,'home.html')
+def main(request):
+    return render(request,'main.html')
 
 def contactus(request):
     return HttpResponse('contact us')
