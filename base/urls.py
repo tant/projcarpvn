@@ -5,7 +5,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home, name="home"),
-    path('main/',views.main, name="main"),
     path('ajax/ajax-load-more-2.html', TemplateView.as_view(template_name='ajax-load-more-2.html'), name="loadmore2"),
     path('ajax/ajax-load-more-3.html', TemplateView.as_view(template_name='ajax-load-more-3.html'), name="loadmore3"),
     path('ajax/ajax-services-detail.html', TemplateView.as_view(template_name='ajax-services-detail.html'), name="servicedetail"),

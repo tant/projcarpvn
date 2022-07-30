@@ -1,84 +1,15 @@
 <nav>
   <ul class="nav nav-pills" id="mainNav">
-    <li class="dropdown">
-      <a
-        class="dropdown-item active"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="/"
-        >Home</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#whoweare"
-        >Who We Are</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#ourservices"
-        >Our Services</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#ourprojects"
-        >Our Projects</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#whyhireus"
-        >Why Hire Us</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#ourblog"
-        >Our Blog</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#ourteam"
-        >Our Team</a
-      >
-    </li>
-    <li class="dropdown">
-      <a
-        class="dropdown-item"
-        data-hash
-        data-hash-offset="0"
-        data-hash-offset-lg="95"
-        href="#contactus"
-        >Contact Us</a
-      >
-    </li>
+    {% for nav in navs %}
+      <li class="dropdown">
+        {% if nav.text == current %}
+          <a class="dropdown-item active" data-hash data-hash-offset="0" data-hash-offset-lg="95" href="{{ nav.link }}" >
+        {% else %}
+          <a class="dropdown-item" data-hash data-hash-offset="0" data-hash-offset-lg="95" href="{{ nav.link }}" >
+        {% endif %}
+          {{ nav.text }}
+          </a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>
