@@ -1,0 +1,43 @@
+
+
+{% block myblock %}
+
+<form class="contact-form form-style-4 form-errors-light" method="POST">    
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.source.errors }}
+    {{ form.source }}
+  
+    <table border="1">
+        <tr>
+          <th>{{ form.name.label_tag }}</th>
+          <td>
+            {{ form.name.errors }}
+            {{ form.name }}
+          </td>
+        </tr>
+  
+        <tr>
+          <th>{{ form.email.label_tag }}</th>
+          <td>
+            {{ form.email.errors }}
+            {{ form.email }}
+          </td>
+        </tr>
+  
+        <tr>
+          <th>{{ form.message.label_tag }}</th>
+          <td>
+            {{ form.message.errors }}
+            {{ form.message }}
+            <br />
+            {{ form.message.help_text }}
+          </td>
+        </tr>
+  
+    </table>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %} 

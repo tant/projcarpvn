@@ -6,7 +6,7 @@
 ```
 git
 python
-django 
+pip install django django-widget-tweaks django-crispy-forms
 vs code + và extension cho python
 ```
 
@@ -21,3 +21,4 @@ Mở terminal chạy lệnh
 - Tạo file trống .gitignore trong thư mục này để .venv không được đẩy lên remote nữa 
 
 
+pu

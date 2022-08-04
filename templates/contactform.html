@@ -1,0 +1,33 @@
+<form class="contact-form form-style-4 form-errors-light" action="php/contact-form.php" method="POST">
+    <input type="hidden" value="Contact Form" name="subject" id="subject" />
+    <div class="form-group col-lg-12 ms-auto my-0">
+        <div class="contact-form-success alert alert-success d-none">
+            Message has been sent to us.
+        </div>
+
+        <div class="contact-form-error alert alert-danger d-none">
+            Error sending your message.
+            <span class="mail-error-message text-1 d-block"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-6">
+            <input type="text" value="" data-msg-required="Please enter your name." maxlength="100"
+                class="form-control py-2" placeholder="Name" name="name" id="name" required />
+        </div>
+        <div class="form-group col-lg-6">
+            <input type="email" value="" data-msg-required="Please enter your email address."
+                data-msg-email="Please enter a valid email address." maxlength="100" class="form-control py-2"
+                placeholder="E-mail" name="email" id="email" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <textarea maxlength="5000" data-msg-required="Please enter your message." rows="4" class="form-control"
+                placeholder="Message" name="message" id="message" required></textarea>
+        </div>
+    </div>
+    <input type="submit" value="Send Message"
+        class="btn btn-dark text-2 font-weight-bold text-uppercase btn-px-5 py-3 position-absolute"
+        data-loading-text="Loading..." style="bottom: -30px; right: 25px" />
+</form>
