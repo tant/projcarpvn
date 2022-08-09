@@ -2,6 +2,15 @@ from xml.parsers.expat import model
 from django.db import models
 
 # Create your models here.
+
+class Contact(models.Model):
+    name = models.CharField(max_length=30, help_text='Your name')
+    email = models.EmailField(max_length=254, help_text='Your email')
+    message = models.TextField(max_length=2000, help_text='Write here your message!')
+
+    def __str__(self):
+        return self.email
+
 class CompanyInfo(models.Model):
     name = models.CharField("Tên công ty", max_length=50)
     phone = models.CharField("Điện thoại", max_length=50, blank=True)
