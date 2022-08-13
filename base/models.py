@@ -27,8 +27,7 @@ class Navlink(models.Model):
     text = models.CharField("text hiện ra trên menu", max_length=50)
     link = models.CharField("link của menu item", max_length=100)
     position = models.IntegerField("thứ tự menu", blank=True, default=0)
-    #không cần field này nữa vì xử lý trong view luôn
-    activated = models.BooleanField("cho biết đang ở trang nào", default=False)
+    activated = models.BooleanField("cho biết đang ở trang nào", default=False) #không cần nữa vì xử lý trong view/context luôn
 
     def __str__(self):
         return (str(self.position) + " : " + self.text + " : " + self.link)

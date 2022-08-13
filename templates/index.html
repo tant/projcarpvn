@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
-{% load static %} 
+{% load static %}
+{% load widget_tweaks %} 
 
 {% block jumbotron %}
 <div class="slider-container rev_slider_wrapper" style="height: 100vh" id="home">
@@ -859,7 +860,9 @@
             <div class="col-lg-6 col-xl-4 order-3">
                 <div class="card custom-card-style-1 h-100">
                     <div class="card-body pt-5">
-                        <form class="contact-form form-style-4 form-errors-light" action="php/contact-form.php" method="POST">
+                        <form class="contact-form form-style-4 form-errors-light" method="POST">
+                            
+                            {% csrf_token %}
                             <input type="hidden" value="Contact Form" name="subject" id="subject" />
                             <div class="form-group col-lg-12 ms-auto my-0">
                                 <div class="contact-form-success alert alert-success d-none">
@@ -873,22 +876,31 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
+                                    <!-- code cũ
                                     <input type="text" value="" data-msg-required="Please enter your name."
                                         maxlength="100" class="form-control py-2" placeholder="Name" name="name"
                                         id="name" required />
+                                    -->
+                                    {% render_field form.name class="form-control py-2" data-msg-required="Please enter your name." maxlength="100" value="" maxlength="100" placeholder="Name" %}
                                 </div>
                                 <div class="form-group col-lg-6">
+                                    <!--
                                     <input type="email" value="" data-msg-required="Please enter your email address."
                                         data-msg-email="Please enter a valid email address." maxlength="100"
                                         class="form-control py-2" placeholder="E-mail" name="email" id="email"
                                         required />
+                                    -->
+                                    {% render_field form.email class="form-control py-2" placeholder="E-mail"%}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col">
+                                    <!--
                                     <textarea maxlength="5000" data-msg-required="Please enter your message." rows="4"
                                         class="form-control" placeholder="Message" name="message" id="message"
                                         required></textarea>
+                                    -->
+                                    {% render_field form.message class="form-control" rows="4" maxlength="5000" placeholder="Message" %}
                                 </div>
                             </div>
                             <input type="submit" value="Send Message"

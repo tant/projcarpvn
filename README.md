@@ -6,7 +6,7 @@
 ```
 git
 python
-pip install django django-widget-tweaks django-crispy-forms
+pip install django django-widget-tweaks sendgrid pillow
 vs code + và extension cho python
 ```
 
@@ -17,8 +17,5 @@ Dùng VS Code mở thư mục đó ra
 
 Mở terminal chạy lệnh 
 - git clone để lấy code về
-- python -m venv .venv để VS thiết lập lại virtual environment
-- Tạo file trống .gitignore trong thư mục này để .venv không được đẩy lên remote nữa 
+- python -m venv .venv để VS thiết lập lại virtual environment ()
 
-
-pu

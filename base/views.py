@@ -9,23 +9,10 @@ from sendgrid.helpers.mail import *
 
 # xem trang home
 def home(request):
-    context = {
-        "navs": Navlink.objects.order_by('position'),
-        "current": "Home",
-        "form": ContactForm(),
-    }
-    return render(request,'index.html',context)
-
-def test(request):
     if request.method == 'POST':
-        print("Vo doan POST")
         form = ContactForm(request.POST)
-        # xem error
-        #for field in form:
-        #    print("Field Error:", field.name,  field.errors)
 
         if form.is_valid():
-            #print("from valid roi do... " + form.cleaned_data['name'] + "-" + form.cleaned_data['email'])
             # lưu database
             form.save()
             # gui mail nhap
@@ -45,8 +32,7 @@ def test(request):
             print(response.body)
             print(response.headers)
             
-
-            return redirect('/')
+            return redirect('/#contactus')
         else:
             print("khong valid")
             return redirect('/test')
@@ -57,4 +43,6 @@ def test(request):
         "form": ContactForm(),
     }
 
-    return render(request, 'test.html', context)
+    return render(request, 'index.html', context)
+
+    
