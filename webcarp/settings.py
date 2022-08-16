@@ -30,6 +30,9 @@ ALLOWED_HOSTS = [
     'democarpvn.azurewebsites.net',
     'carp.vn',
     'www.carp.vn',
+    'localhost',
+    '127.0.0.1',
+    '*',
 ]
 
 
@@ -41,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # thêm whitenoise
+    'whitenoise.runserver_nostatic', 
     'django.contrib.staticfiles',
 
     'base.apps.BaseConfig',
@@ -51,6 +56,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # add whitenoise ngay sau security
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -132,6 +139,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
@@ -155,15 +168,15 @@ LOGGING = {
             'style': '{',
         },
     },
-    'filters': {
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-    },
+ #   'filters': {
+ #       'require_debug_true': {
+ #           '()': 'django.utils.log.RequireDebugTrue',
+ #       },
+ #   },
     'handlers': {
         'console': {
             'level': 'INFO',
-            'filters': ['require_debug_true'],
+ #           'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
