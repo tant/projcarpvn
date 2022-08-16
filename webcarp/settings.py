@@ -24,9 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)-!ua!_o$59e2#bu)7!2j5lt7&!sulkq=$s=wvxk4kc$&aa1h9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'democarpvn.azurewebsites.net',
+    'carp.vn',
+    'www.carp.vn',
+]
 
 
 # Application definition
