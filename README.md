@@ -48,6 +48,27 @@ Hình như chỉ khác dấu nhắc :)
 Đảm bảo khi mở Terminal/New Terminal phải thấy môi trường ảo được kích hoạt như ví dụ bên dưới
 ```
 source /Users/tantran/work/python/projcarpvn/.venv/bin/activate
-tantran@mbam1 projcarpvn % source /Users/tantran/work/python/projcarpvn/.venv/bin/activate
-(.venv) tantran@mbam1 projcarpvn % 
+% source /Users/tantran/work/python/projcarpvn/.venv/bin/activate
+(.venv) % 
+```
+Cập nhận pip lên bản mới nhất
+```
+(.venv) % python -m pip install --upgrade pip
+Requirement already satisfied: pip in ./.venv/lib/python3.9/site-packages (22.1.1)
+Collecting pip
+  Using cached pip-22.2.2-py3-none-any.whl (2.0 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.1.1
+    Uninstalling pip-22.1.1:
+      Successfully uninstalled pip-22.1.1
+Successfully installed pip-22.2.2
+```
+Cài đặt các thư viện cần thiết vào môi trường ảo
+```
+(.venv) % pip install -r requirements.txt
+```
+Và có thể chạy được rồi đó
+```
+(.venv) % python manage.py runserver
 ```
