@@ -492,19 +492,23 @@
             <div class="col-lg-6 col-xl-4 order-3">
                 <div class="card custom-card-style-1 h-100 box-content border-width-4">
                     <div class="card-body pt-5">
-                        <form class="contact-form form-style-4 form-errors-light" action="php/contact-form.php"
-                            method="POST">
+                        <form class="contact-form form-style-4 form-errors-light" method="POST">
+                            {% csrf_token %}
                             <input type="hidden" value="Contact Form" name="subject" id="subject" />
+                            <!-- Phải sửa lại cái div này hiện cho đúng-->
+                            {% if messages %}
                             <div class="form-group col-lg-12 ms-auto my-0">
                                 <div class="contact-form-success alert alert-success d-none">
                                     Message has been sent to us.
                                 </div>
-
+                                
                                 <div class="contact-form-error alert alert-danger d-none">
-                                    Error sending your message.
+                                    Message has been sent to us.
                                     <h4 class="mail-error-message text-1 d-block"></h4>
                                 </div>
+                                
                             </div>
+                            {% endif %}
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     {% render_field form.name class="form-control py-2" data-msg-required="Please enter your name." maxlength="100" value="" maxlength="100" placeholder="Name" %}

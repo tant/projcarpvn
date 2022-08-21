@@ -27,12 +27,11 @@ SECRET_KEY = 'django-insecure-)-!ua!_o$59e2#bu)7!2j5lt7&!sulkq=$s=wvxk4kc$&aa1h9
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'democarpvn.azurewebsites.net',
     'carp.vn',
     'www.carp.vn',
     'localhost',
     '127.0.0.1',
-    '*',
+    'fragtan.pythonanywhere.com',
 ]
 
 
