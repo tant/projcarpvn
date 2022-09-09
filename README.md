@@ -72,3 +72,4 @@ Và có thể chạy được rồi đó
 ```
 (.venv) % python manage.py runserver
 ```
+NOTE: Nhớ liên hệ lấy file cấu hình môi trường thì mới chạy phần contact được nha

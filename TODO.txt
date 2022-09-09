@@ -1,5 +1,0 @@
-Việc cần làm 
-
-https://portotheme.com/html/porto/8.1.0/demo-architecture-interior.html
-
-* Coi lại cách cấu hình cái slider, so sánh với bản demo
