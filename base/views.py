@@ -44,12 +44,12 @@ def home(request):
             #print(response.status_code)
             #print(response.body)
             #print(response.headers)
-            
+
+            print("chay duoc toi day")
+
             messages.info(request,'Message sent. We will contact you very at your email.')
-            return redirect('/#contactus')
         else:
             messages.info('Error sending your message.')
-            return redirect('/#contactus')
 
     context = {
         "navs": Navlink.objects.order_by('position'),
