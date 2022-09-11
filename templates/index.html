@@ -509,7 +509,7 @@
                                 </div>
                                 
                                 <div class="contact-form-error alert alert-danger d-none">
-                                    Message has been sent to us.
+                                    Error message
                                     <h4 class="mail-error-message text-1 d-block"></h4>
                                 </div>
                                 
@@ -525,8 +525,12 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col">
-
                                     {% render_field form.message class="form-control" rows="4" maxlength="5000" placeholder="Message" %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col">
+                                    {% render_field form.captcha placeholder="Type what you read on the left" %}
                                 </div>
                             </div>
                             <input type="submit" value="Send Message"

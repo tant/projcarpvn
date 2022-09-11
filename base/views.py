@@ -47,9 +47,11 @@ def home(request):
 
             print("chay duoc toi day")
 
-            messages.info(request,'Message sent. We will contact you very at your email.')
+            messages.info(request, 'Message sent. We will contact you very at your email.')
         else:
-            messages.info('Error sending your message.')
+            print('không valid rồi')
+            messages.info(request, 'Error sending your message.')
+            form = ContactForm()
 
     context = {
         "navs": Navlink.objects.order_by('position'),

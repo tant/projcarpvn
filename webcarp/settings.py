@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     # thêm whitenoise
-    'whitenoise.runserver_nostatic', 
+    'whitenoise.runserver_nostatic',    
     'django.contrib.staticfiles',
 
     'base.apps.BaseConfig',
     'widget_tweaks',
-
+    # thêm captcha
+    'captcha',
 ]
 
 MIDDLEWARE = [
