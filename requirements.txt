@@ -4,3 +4,4 @@ pillow
 sendgrid
 whitenoise
 python-dotenv
+django-simple-captcha
