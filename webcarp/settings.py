@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
     'www.carp.vn',
     'localhost',
     '127.0.0.1',
-    'fragtan.pythonanywhere.com',
+    'tantran.dev',
 ]
 
 
@@ -146,7 +146,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+# Add thêm 
+CSRF_TRUSTED_ORIGINS = [
+    "http://*.carp./vn"
+]
 
 
 # Default primary key field type
