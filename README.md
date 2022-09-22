@@ -5,7 +5,12 @@
 ### Cài đặt các công cụ cơ bản
 ```
 git
-python
+python+pip (vì có trường hợp trên máy linux chỉ cài python chứ chưa cài pip)
+--> Phải chạy thành công được 3 lệnh 
+git --version
+python --version hoặc python3 --version
+git --version hay git3 --version
+
 Visual Studio Code và và một số extension trên VS Code (optional theo thứ tự ưu tiên giảm dần) như:
 - Python
 - Pylance
@@ -42,7 +47,7 @@ Chạy lệnh tạo virtual environment
 ```
 
 #### Trên Windows 
-Hình như chỉ khác dấu nhắc :)
+...>python3 -m venv .venv
 
 ### Chạy VS Code và mở thử mục projcarpvn ra 
 Đảm bảo khi mở Terminal/New Terminal phải thấy môi trường ảo được kích hoạt như ví dụ bên dưới
