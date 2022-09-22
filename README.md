@@ -47,7 +47,7 @@ Chạy lệnh tạo virtual environment
 ```
 
 #### Trên Windows 
-...>python3 -m venv .venv
+...>python -m venv .venv
 
 ### Chạy VS Code và mở thử mục projcarpvn ra 
 Đảm bảo khi mở Terminal/New Terminal phải thấy môi trường ảo được kích hoạt như ví dụ bên dưới
