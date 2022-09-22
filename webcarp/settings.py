@@ -31,7 +31,6 @@ ALLOWED_HOSTS = [
     'www.carp.vn',
     'localhost',
     '127.0.0.1',
-    'tantran.dev',
 ]
 
 
