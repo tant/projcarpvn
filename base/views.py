@@ -17,7 +17,7 @@ def home(request):
             # loại bỏ các message có chứa link
             themessage = form.cleaned_data['message']
             findhttp = themessage.find('http')
-            if findhttp != -1: # nếu nội dung không có chữ http hay https thì mới xử lý tiếp
+            if findhttp == -1: # nếu nội dung không có chữ http hay https thì mới xử lý tiếp
                 # lưu database
                 form.save()
                 # gui mail nhap
