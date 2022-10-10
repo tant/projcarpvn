@@ -1,3 +1,4 @@
+from operator import truediv
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import *
@@ -8,16 +9,31 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import *
 
 
+def isspam(msg, spamkeys):
+    #spamkeys = ['http', '@']
+
+    msg = msg.lower()
+    for x in spamkeys:
+        if (msg.find(x)!=-1):
+            return False
+    
+    # tới đây an tâm
+    return True
+    
 # xem trang home
 def home(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
         if form.is_valid():
-            # loại bỏ các message có chứa link
-            themessage = form.cleaned_data['message']
-            findhttp = themessage.find('http')
-            if findhttp == -1: # nếu nội dung không có chữ http hay https thì mới xử lý tiếp
+            # loại bỏ các yếu tố nghi spam
+            themessage = str(form.cleaned_data['message'])
+            thename = str(form.cleaned_data['name'])
+
+            # Name không có chữ Crytorix
+            # Message không có http và @
+
+            if (not isspam(themessage, ['http', '@']) & (not isspam(thename,['Crytorix']))): 
                 # lưu database
                 form.save()
                 # gui mail nhap
@@ -55,7 +71,7 @@ def home(request):
                 messages.info(request, 'Message sent. We will contact you very at your email.')
             else:
                 print('không valid rồi')
-                messages.info(request, 'We do not accept link')
+                messages.info(request, 'We do not accept link in message')
                 form = ContactForm()    
         else:
             print('không valid rồi')
