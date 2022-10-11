@@ -14,11 +14,14 @@ def isspam(msg, spamkeys):
 
     msg = msg.lower()
     for x in spamkeys:
-        if (msg.find(x)!=-1):
-            return False
+        for x in spamkeys:
+        pos = msg.find(x)
+        if (pos != -1): # nghĩa là tìm được
+            print('Tìm ra dấu hiệu spam ở vị trí ', str(pos))
+            return True
     
-    # tới đây an tâm
-    return True
+    # tới đây có thể an tâm
+    return False
     
 # xem trang home
 def home(request):
