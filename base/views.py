@@ -56,7 +56,7 @@ def home(request):
                         content="<p> Tên khách hàng: " + form.cleaned_data['name'] + "</p>" +
                             "<p> Email: " + form.cleaned_data['email'] + "</p>" +
                             "<p> Nội dung: " + form.cleaned_data['message'] + "</p>" +
-                            "<p> Code updated Sep 22, 2022: </p>" 
+                            "<p> Code updated Oct 10, 2022: </p>" 
                     )
                 ]
 
