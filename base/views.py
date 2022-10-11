@@ -14,7 +14,6 @@ def isspam(msg, spamkeys):
 
     msg = msg.lower()
     for x in spamkeys:
-        for x in spamkeys:
         pos = msg.find(x)
         if (pos != -1): # nghĩa là tìm được
             print('Tìm ra dấu hiệu spam ở vị trí ', str(pos))
